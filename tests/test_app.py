@@ -1,5 +1,11 @@
+import sys
+import os
 import pytest
-from app import app
+
+# Dodaj katalog nadrzędny do sys.path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from main import app  # Importuj aplikację z main.py
 
 @pytest.fixture
 def client():
